@@ -4,73 +4,95 @@ Clean, simple diagrams perfect for presentation slides with other content.
 
 ---
 
-## **Simple Architecture Overview** 
+## **System Architecture Overview** 
 *Clean system overview for slides*
 
 ```mermaid
 graph LR
-    A[Flutter App<br/>📱] --> B[Python API<br/>🤖]
-    B --> C[MediaPipe<br/>👁️]
-    C --> D[AI Analysis<br/>⚡]
-    D --> A
-    A --> E[Firebase<br/>🔥]
+    A[Flutter Mobile App] --> B[Flask API Endpoint]
+    B --> C[MediaPipe<br/>Pose Detection]
+    C --> D[CNN-LSTM Model<br/>AI Analysis]
+    D --> E[Geometric Analysis<br/>Joint Angles]
+    E --> A
+    A --> F[Firebase Database<br/>User Progress]
     
     style A fill:#2196F3
     style B fill:#4CAF50
     style C fill:#FF9800
     style D fill:#9C27B0
-    style E fill:#FF6F00
+    style E fill:#FFC107
+    style F fill:#FF6F00
 ```
 
 ---
 
-## **Simple Data Flow**
+## **User Workflow**
 *Clean user journey for slides*
 
 ```mermaid
 flowchart LR
-    A[📸 Take Photo] --> B[🤖 AI Analysis]
-    B --> C[📊 Get Feedback]
-    C --> D[📈 Track Progress]
+    A[Image Capture] --> B[Pose Detection<br/>33 Landmarks]
+    B --> C[Dual Analysis<br/>Geometric + ML]
+    C --> D[Specific Feedback<br/>Joint Angles]
+    D --> E[Progress Tracking<br/>Firebase Storage]
     
     style A fill:#e3f2fd
     style B fill:#e8f5e8
     style C fill:#fff3e0
-    style D fill:#f3e5f5
+    style D fill:#ffebee
+    style E fill:#f3e5f5
 ```
 
 ---
 
-## **Tech Stack - Minimal**
-*Simple technology overview*
+## **Technology Stack**
+*Key technologies and integrations*
 
 ```mermaid
 graph TB
-    A[Flutter Mobile] --> B[Firebase Database]
-    A --> C[Python Flask API]
-    C --> D[MediaPipe + TensorFlow]
+    subgraph "Frontend"
+        A[Flutter Framework<br/>Cross-Platform Mobile]
+        B[Firebase SDK<br/>Authentication & Storage]
+    end
+    
+    subgraph "Backend"
+        C[Python Flask API<br/>Pose Analysis Service]
+        D[MediaPipe Library<br/>Google Pose Detection]
+        E[TensorFlow Models<br/>CNN-LSTM Classification]
+    end
+    
+    A --> C
+    A --> B
+    C --> D
+    C --> E
     
     style A fill:#2196F3
     style B fill:#FF6F00
     style C fill:#4CAF50
     style D fill:#FF9800
+    style E fill:#9C27B0
 ```
 
 ---
 
 ## **AI Processing Pipeline**
-*Simple AI workflow*
+*Detailed analysis workflow*
 
 ```mermaid
 flowchart LR
-    A[Image Input] --> B[Extract<br/>33 Landmarks]
-    B --> C[Calculate<br/>Joint Angles]
-    C --> D[Generate<br/>Feedback]
+    A[Image Input<br/>User Photo] --> B[MediaPipe Processing<br/>Extract 33 Landmarks]
+    B --> C[Geometric Analysis<br/>Cosine Distance Calculation]
+    B --> D[CNN-LSTM Model<br/>Exercise Classification]
+    C --> E[Joint Angle Analysis<br/>8 Key Body Points]
+    D --> E
+    E --> F[Similarity Scoring<br/>& Feedback Generation]
     
     style A fill:#e1f5fe
     style B fill:#e8f5e8
     style C fill:#fff3e0
-    style D fill:#ffebee
+    style D fill:#f3e5f5
+    style E fill:#ffebee
+    style F fill:#f9fbe7
 ```
 
 ---
@@ -117,14 +139,16 @@ graph LR
 ## **Usage Guide for Slides**
 
 ### **Best for Presentation Slides:**
-1. **Simple Architecture Overview** - Shows complete system in 5 boxes
-2. **Simple Data Flow** - User journey in 4 steps
-3. **AI Processing Pipeline** - Technical flow in 4 steps
+1. **System Architecture Overview** - Shows complete system in 6 components
+2. **User Workflow** - User journey in 5 technical steps  
+3. **AI Processing Pipeline** - Detailed dual analysis workflow
+4. **Technology Stack** - Professional technology overview
 
 ### **When to Use:**
-- **Architecture Overview**: During technical solution (1:00 mark)
-- **Data Flow**: During user experience explanation (2:00 mark)  
-- **AI Pipeline**: During detailed technical explanation
+- **System Architecture**: During technical solution overview (1:00 mark)
+- **User Workflow**: During user experience explanation (2:00 mark)  
+- **AI Processing Pipeline**: During detailed technical deep-dive
+- **Technology Stack**: For Q&A or technical credibility
 
 ### **Why These Work Better:**
 - ✅ **Fewer elements** - easier to read on slides
@@ -134,8 +158,9 @@ graph LR
 
 ### **Slide Layout Tips:**
 ```
-[Your text content]    [Simple diagram]
-[Key bullet points]    [App screenshot]
+Your presentation text     [Simple diagram]
+• Key technical points     [App screenshot]  
+• Impressive metrics       
 ```
 
 ### **Color Scheme:**
